@@ -10,7 +10,7 @@ $(function() {
 var key="OsktMS2zlvj2EkLt90UkTiTgUJdAdbO6SZvSHxW1hDHQp2er1t";
 var secret="MKsIqvvUXPSACsQhlB8RPh0t9BqRVa3XVdsTa6Wq";
 
-var type= $('#petSearch').val();
+const animal = document.querySelector('#petSearch').value;
 
 fetch('https://api.petfinder.com/v2/oauth2/token', {
     method: "POST",
@@ -23,7 +23,7 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
 }).then(function(data) {
     console.log('token', data);
 
-return fetch("https://api.petfinder.com/v2/types/?type=" + type, {
+return fetch(`https://api.petfinder.com/v2/animals?${animal}`, {
      headers: {
         'Authorization': data.token_type + ' ' + data.access_token,
         'Content-Type': 'application/x-www-form-urlencoded'
