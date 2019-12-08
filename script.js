@@ -13,7 +13,7 @@ function fetchAnimals(e) {
     e.preventDefault();  
 
     fetch(
-    `http://api.petfinder.com/pet.find?format=json&key=OsktMS2zlvj2EkLt90UkTiTgUJdAdbO6SZvSHxW1hDHQp2er1t&animal=${animal}&location=${zip}&callback=callback`,
+    `https://api.petfinder.com/pet.find?format=json&key=OsktMS2zlvj2EkLt90UkTiTgUJdAdbO6SZvSHxW1hDHQp2er1t&animal=${animal}&location=${zip}&callback=callback`,
     {
       jsonpCallbackFunction: 'callback'
     }
