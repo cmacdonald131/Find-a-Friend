@@ -10,25 +10,38 @@
     <title>Rescue Animal API</title>
 </head>
 <body>
-    <main>
+    <header class="header">
+        <h1>Help rescue your new best friend</h1>
+    </header>
         <section class="container">
-            <h1>Help rescue your new best friend</h1>
-            
-            <form id="form">
-                <div id="pets"></div><br>
-                <p><label for="pets" id="pets"><strong>Search by any type of pet</strong></label></p>
-                <p><input type="text" id="petSearch" placeholder="Start searching"></p>
-                
-                <p><button type="submit" id="submit">Find Pets</button></p>
+            <form id="pet-form">
+                <div class="form-group">
+                    <label for="petSearch">Search by any type of pet</label>
+                    <select id="petSearch" class="form-control">
+                        <option value=''></option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="rabbit">Rabbit</option>
+                        <option value="small&furry">Small & Furry</option>
+                        <option value="horse">Horse</option>
+                        <option value="bird">Bird</option>
+                        <option value="scales">Scales, Fins & Other</option>
+                        <option value="barnyard">Barnyard</option>
+                    </select>
+                    <input type="text" id="zip" class="form-control" placeholder="Enter your zipcode">
+                    <input type="submit" value="Find" class="btn">
+                </div>
             </form>
-            <div id="rescue"></div>
+
+            <div id="results"></div>
+                
         </section>
 
 
 
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script src="script.js"></script>
-    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="validate.js"></script>
     
 </body>
 </html>
