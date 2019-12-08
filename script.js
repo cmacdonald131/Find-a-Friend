@@ -1,49 +1,69 @@
-$(function() {
-    $('input[type="text"]').focus();
-
-    var inputPlaceholder = ["Dog", "Cat", "Bird", "Snake", "Turtle", "Hamster"];
-    setInterval(function() {
-        $("input[type='text']").attr("placeholder", inputPlaceholder[inputPlaceholder.push(inputPlaceholder.shift())-1]);
-    }, 3000);
-})
-
 var key="OsktMS2zlvj2EkLt90UkTiTgUJdAdbO6SZvSHxW1hDHQp2er1t";
 var secret="MKsIqvvUXPSACsQhlB8RPh0t9BqRVa3XVdsTa6Wq";
 
+const petForm = document.querySelector('#pet-form');
+
 const animal = document.querySelector('#petSearch').value;
+const zip = document.querySelector('#zip').value;
 
-fetch('https://api.petfinder.com/v2/oauth2/token', {
-    method: "POST",
-    body: "grant_type=client_credentials&client_id=" + key + "&client_secret=" + secret,
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        }
-}).then(function(resp) {
-    return resp.json();
-}).then(function(data) {
-    console.log('token', data);
 
-return fetch(`https://api.petfinder.com/v2/animals?${animal}`, {
-     headers: {
-        'Authorization': data.token_type + ' ' + data.access_token,
-        'Content-Type': 'application/x-www-form-urlencoded'
-        }
-    });
+petForm.addEventListener('submit', fetchAnimals);
 
-}).then(function(resp) {
-    return resp.json();
+function fetchAnimals(e) {
+    e.preventDefault();  
 
-}).then(response => {
-    console.log(response);
-    let buildHTML = "";
-    for (let i = 0; i < response.data; i++) {
-        buildHTML += `<h2>${response.data[i].fullName}</h2>`;
-        buildHTML += `<p><a href="${response.data[i].url}" target="_blank">Visit Website</a></p>`;
-        buildHTML += `<p><em>${response.data[i].description}</em></p>`;
+    fetch(
+    `http://api.petfinder.com/pet.find?format=json&key=OsktMS2zlvj2EkLt90UkTiTgUJdAdbO6SZvSHxW1hDHQp2er1t&animal=${animal}&location=${zip}&callback=callback`,
+    {
+      jsonpCallbackFunction: 'callback'
     }
-    document.querySelector("#rescue").innerHTML = buildHTML;
-});
+  )
+    .then(res => res.json())
+    .then(data => showAnimals(data.petfinder.pets.pet))
+    .catch(error => console.log(error));
+}
 
-document.querySelector("#submit").addEventListener("click", (e) => {
-    e.preventDefault();
-})
+function callback(data) {
+    console.log(data);
+}
+
+function showAnimals(pets) {
+  const results = document.querySelector('#results');
+  
+  results.innerHTML = '';
+  
+  pets.forEach(pet => {
+    console.log(pet);
+    const div = document.createElement('div');
+    div.classList.add('card', 'card-body', 'mb-3');
+    div.innerHTML = `
+      <div class="row">
+        <div class="col-sm-6">
+          <h4>${pet.name.$t} (${pet.age.$t})</h4>
+          <p class="text-secondary">${pet.breeds.breed.$t}</p>
+          <p>${pet.contact.address1.$t} ${pet.contact.city.$t} ${
+      pet.contact.state.$t
+    } ${pet.contact.zip.$t}</p>
+          <ul class="list-group">
+            <li class="list-group-item">Phone: ${pet.contact.phone.$t}</li>
+            ${
+              pet.contact.email.$t
+                ? `<li class="list-group-item">Email: ${
+                    pet.contact.email.$t
+                  }</li>`
+                : ``
+            }
+            <li class="list-group-item">Shelter ID: ${pet.shelterId.$t}</li>
+          </ul>
+        </div>
+        <div class="col-sm-6 text-center">
+          <img class="img-fluid rounded-circle mt-2" src="${
+            pet.media.photos.photo[3].$t
+          }">
+        </div>
+      </div>
+    `;
+
+    results.appendChild(div);
+  });
+}
