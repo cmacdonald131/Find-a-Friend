@@ -1,14 +1,17 @@
 'use strict';
 
 
-  let animal = $('#petSearch').val();
+let animal = $('#petSearch').val();
+
+let zip = $('#zip').val();
 
 
-  let zip = $('#zip').val();
 
-  
 function fetchAnimals() {
-    fetch(`https://api.petfinder.com/v2/animals?type=${animal}&location=${zip}&page=2`)
+    fetch(`https://api.petfinder.com/v2/animals?type=${animal}&location=${zip}&page=2`, {headers: {
+      Accept: 'application/json'},
+        credentials: 'same-origin',
+        Authorization: `token ${token}`})
     .then(response => response.json())
     .then(responseJson => showAnimals(responseJson))
     .catch(error => alert("It's not working"));
