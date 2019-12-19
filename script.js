@@ -11,7 +11,7 @@ function fetchAnimals() {
     fetch(`https://api.petfinder.com/v2/animals?type=${animal}&location=${zip}&page=2`, {headers: {
       Accept: 'application/json'},
         credentials: 'same-origin',
-        Authorization: `token ${token}`})
+        Authorization: `Token ${token}`})
     .then(response => response.json())
     .then(responseJson => showAnimals(responseJson))
     .catch(error => alert("It's not working"));
