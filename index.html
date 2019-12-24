@@ -19,29 +19,36 @@
                 <div class="form-group">
                     <label for="petSearch">Search by any type of pet</label>
                     <select id="petSearch" class="form-control">
-                        <option value=''></option>
+                        <option value=""></option>
                         <option value="dog">Dog</option>
                         <option value="cat">Cat</option>
                         <option value="rabbit">Rabbit</option>
-                        <option value="small&furry">Small & Furry</option>
                         <option value="horse">Horse</option>
                         <option value="bird">Bird</option>
-                        <option value="scales">Scales, Fins & Other</option>
                         <option value="barnyard">Barnyard</option>
+                        <option value="small-furry">Small and Furry</option>
+                        <option value="scales-fins-other">Scales, Fins, and Other</option>
                     </select>
-                    <input type="text" id="zip" class="form-control" placeholder="Enter your zipcode">
-                    <input type="submit" value="Find" class="btn">
+                    <input type="text" id="zip" class="form-control" placeholder="Enter your zipcode or location" required>
+                    <input type="text" id="gender" class="form-control" placeholder="Male or Female (optional)">
+                    <input type="submit" value="find" class="btn">
                 </div>
             </form>
 
-            <div id="results"></div>
+            <div id="results">
                 <h2>Let's check out your new pet!</h2>
+                <ul></ul>
+            </div>
+                
                 
         </section>
 
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
     <script src="validate.js"></script>
     <script src="script.js"></script>
     
