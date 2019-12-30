@@ -1,6 +1,6 @@
 # Find-a-Friend
 
-An app designed to help users interested in adoption to search for all kinds of pets in their area.
+An app designed to help users interested in adoption search for all kinds of pets in their area.
 
 https://cmacdonald131.github.io/Find-a-Friend/
 
@@ -11,3 +11,7 @@ I wanted to build an app to help people interested in adoption with the hopes of
 ## Screenshot
 
 ![screenshot](images/screenshot2.png)
+
+## Technology
+
+_**HTML, CSS, Javascript, Jquery**_
