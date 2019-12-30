@@ -1,5 +1,7 @@
 'use strict';
 
+//retrieves token for authorization and sends fetch request with user input//
+
 function fetchAnimals(animal, zip, gender) {
   console.log(token);
   fetch(`https://api.petfinder.com/v2/animals?type=${animal}&location=${zip}&gender=${gender}&status=adoptable&distance=25`, {
@@ -12,6 +14,8 @@ function fetchAnimals(animal, zip, gender) {
     .catch(error => showError(error.message));
 }
 
+//displays data retrieved from the API as JSON and then renders it into the HTML//
+
 function showAnimals(responseJson) {
   console.log(responseJson);
   if(!responseJson.animals) {
@@ -23,7 +27,7 @@ function showAnimals(responseJson) {
     return
   }
 
-//set up some other search parameters (attributes, good with dogs, etc.)//
+//displays data returned from JSON in the HTML//
 
   $('#results ul').html('');
   for(let i=0; i<responseJson.animals.length; i++) {
