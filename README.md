@@ -1,4 +1,4 @@
-# Find a Friend
+# Find a Friend :dog: :cat: :horse: :pig: :bird: :snake: :turtle:
 
 An app designed to help users interested in adoption search for all kinds of pets in their area.
 
