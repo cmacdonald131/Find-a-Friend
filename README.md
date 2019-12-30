@@ -14,4 +14,4 @@ I wanted to build an app to help people interested in adoption with the hopes of
 
 ## Technology
 
-_**HTML, CSS, Javascript, Jquery**_
+_**HTML, CSS, Javascript, jQuery**_
