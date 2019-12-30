@@ -23,15 +23,20 @@ function showAnimals(responseJson) {
     return
   }
 
+//set up some other search parameters (attributes, good with dogs, etc.)//
+
   $('#results ul').html('');
   for(let i=0; i<responseJson.animals.length; i++) {
+    for(let p=0; p<responseJson.animals[i].photos.length; p++) {
      $('#results ul').append(`<li>
      <h3>${responseJson.animals[i].name}</h3>
-     
+     <img src="${responseJson.animals[i].photos[p].small}" alt="animals" class="petImg">
      <p>${responseJson.animals[i].breeds.primary} (${responseJson.animals[i].age}) (${responseJson.animals[i].size})</p>
-     <a href="${responseJson.animals[i].url}" class="animalLink" target="_blank">Check Me Out</a>
+     <a href="${responseJson.animals[i].url}" class="animalLink" target="_blank">Find out more about me!</a>
+     
      </li>`);
- }  
+ }
+}  
 
 }
 
