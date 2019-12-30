@@ -72,13 +72,6 @@ li {
     margin-bottom: 10px;
 }
 
-.email {
-    text-decoration: none;
-    cursor: pointer;
-    margin-bottom: 5%;
-    display: block;
-}
-
 @media screen and (min-width: 320px) {
 
 .container {
