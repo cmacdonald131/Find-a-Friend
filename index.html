@@ -8,16 +8,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="#">
-    <title>Rescue Animal API</title>
+    <title>Find a Friend</title>
 </head>
 <body>
     <header class="header">
-        <h1>Help rescue your new best friend</h1>
+        <img src="images/icon.png" alt="icon" class="petIcon">
+        <h1>Find a Friend</h1>
+        <h2>Help rescue your new best friend</h2>
     </header>
-        <section class="container">
+        <section class="container" aria-live="assertive">
             <form id="pet-form">
                 <div class="form-group">
                     <label for="petSearch">Search by any type of pet</label>
+                    <br>
                     <select id="petSearch" class="form-control">
                         <option value=""></option>
                         <option value="dog">Dog</option>
@@ -29,21 +32,18 @@
                         <option value="small-furry">Small and Furry</option>
                         <option value="scales-fins-other">Scales, Fins, and Other</option>
                     </select>
-                    <input type="text" id="zip" class="form-control" placeholder="Enter your zipcode or location" required>
+                    <input type="text" id="zip" class="form-control" placeholder="Enter your zip or location" required>
                     <input type="text" id="gender" class="form-control" placeholder="Male or Female (optional)">
-                    <input type="submit" value="find" class="btn">
+                    <input type="submit" value="Find a Friend" class="btn">
                 </div>
             </form>
-
+            
             <div id="results">
-                <h2>Let's check out your new pet!</h2>
+                <img src="images/pets.webp" alt="pets" class="resultsPic">
                 <ul></ul>
-            </div>
-                
+            </div>             
                 
         </section>
-
-
 
     <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
