@@ -6,7 +6,7 @@ https://cmacdonald131.github.io/Find-a-Friend/
 
 ## Motivation
 
-I wanted to build an app to help people interested in adoption with the hopes of helping pets find their forever homes.
+I wanted to build an app to help people interested in adoption, with the hopes of steering people away from buying, and helping pets find their "furever" homes.
 
 ## Screenshot
 
