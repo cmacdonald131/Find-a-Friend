@@ -1,3 +1,3 @@
 # Pet-Rescue
 
-https://cmacdonald131.github.io/Pet-Rescue/
+https://cmacdonald131.github.io/Find-a-Friend/
