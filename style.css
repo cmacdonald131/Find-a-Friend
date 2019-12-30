@@ -102,6 +102,14 @@ li {
 
 @media screen and (min-width: 700px) {
 
+.form-control {
+    width: 50%;
+}
+
+.container {
+    width: 50%;
+}
+
 h3 {
     text-align: center;
 }
