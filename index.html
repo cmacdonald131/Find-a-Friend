@@ -20,9 +20,9 @@
             <h3>See what you can find!</h3>
             <form id="pet-form">
                 <div class="form-group">
-                    
+                    <label for="petSearch">Search by any type of pet</label>
+                    <br>
                     <select id="petSearch" class="form-control">
-                        <option value="">Start your search</option>
                         <option value="dog">Dog</option>
                         <option value="cat">Cat</option>
                         <option value="rabbit">Rabbit</option>
@@ -32,8 +32,14 @@
                         <option value="small-furry">Small and Furry</option>
                         <option value="scales-fins-other">Scales, Fins, and Other</option>
                     </select>
-                    <input type="text" id="zip" class="form-control" placeholder="Enter your zip or location" required>
-                    <input type="text" id="gender" class="form-control" placeholder="Male or Female (optional)">
+                    <br>
+                    <label for="zip">Search by zipcode or City, State</label>
+                    <br>
+                    <input type="text" id="zip" class="form-control" required>
+                    <br>
+                    <label for="gender">Search by pet gender (optional)</label>
+                    <br>
+                    <input type="text" id="gender" class="form-control">
                     <input type="submit" value="Find a Friend" class="btn">
                 </div>
             </form>
