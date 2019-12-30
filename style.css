@@ -31,7 +31,7 @@ body {
     text-align: center;
     flex-direction: column;
     align-content: center;
-    padding-top: 20px;
+    
     padding-bottom: 20px;
 }
 
@@ -54,6 +54,8 @@ li {
     padding-bottom: 5px;
     margin: 5%;
 }
+
+
 
 .resultsPic {
     display: block;
@@ -99,6 +101,10 @@ li {
     cursor: pointer;
 }
 
+.btn {
+    margin-top: 10px;
+}
+
 }
 
 @media screen and (min-width: 700px) {
@@ -113,6 +119,13 @@ p {
 
 .animalLink {
     text-align: center;
+}
+
+.btn {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 }
